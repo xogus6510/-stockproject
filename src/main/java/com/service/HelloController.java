@@ -1,12 +1,24 @@
-package com.myproject;
+package com.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class HelloController {
+	
+	@Autowired
+	Crawling service;
+	
+
+	
+	@GetMapping("/")
+    public void crollingPage() {
+		service.test();
+     
+    }
 	
 	//뷰의 요청경로 지정
 	@RequestMapping("/helloboot")
